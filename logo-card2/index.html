@@ -8,9 +8,7 @@
 <button class="ChangeHeadingBtn">Change Heading</button>
 
   <style>
-    
   </style>
-
 
   <title>logo-card2</title>
   
@@ -36,31 +34,31 @@ document.querySelector(".duplicateBtn").addEventListener("click", function(e){
 }); 
 
 //When the card is clicked the color changes
-document.querySelector("changeColorBtn").addEventListener("click", function (e) {
+document.querySelector(".changeColorBtn").addEventListener("click", function (e) {
 const div = document.querySelector("logo-card2").shadowRoot.querySelector(".mainCard");
 let divColor = div.style.backgroundColor = "gray"; //changes the background to gray
 document.body.appendChild(divColor);
 });
 
 //When the heading/title is clicked it is changed to "something else"
-document.querySelector("ChangeHeadingBtn").addEventListener("click", function (e) {
-  document.querySelector("logo-card2").shadowRoot.querySelector("heading").innerText= "Something else"; //replaces the text of the heading
+document.querySelector(".ChangeHeadingBtn").addEventListener("click", function (e) {
+  document.querySelector("logo-card2").title="Something else";
 });
 
 //JavaScript Hover implementation
-document.querySelector("div").addEventListener("mouseover", function (e) {
+document.querySelector(".mainCard").addEventListener("mouseover", function (e) {
 const card = document.querySelector("logo-card2");
-let hoverEffect = div.style.borderColor ="white";
+let hoverEffect = div.style.borderColor="white";
 document.body.appendChild(hoverEffect);
 });
 
-document.querySelector("div").addEventListener("mouseout", function (e) {
+document.querySelector(".mainCard").addEventListener("mouseout", function (e) {
 const card = document.querySelector("logo-card2");
-let hoverEffect = div.style.borderColor ="black";
+let hoverEffect = div.style.borderColor="black";
 document.body.appendChild(hoverEffect);
 });
 
-  </script>
+</script>
   
 </body>
 
