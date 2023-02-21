@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/logo-card2.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "LogoCard2",
+          "members": [
+            {
+              "kind": "field",
+              "name": "header",
+              "type": {
+                "text": "string"
+              },
+              "default": "'My app'",
+              "privacy": "public",
+              "attribute": "header"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "header",
+              "fieldName": "header"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "logo-card2",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "logo-card2",
+          "declaration": {
+            "name": "LogoCard2",
+            "module": "src/logo-card2.js"
+          }
+        }
+      ]
+    }
+  ]
+}

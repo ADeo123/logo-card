@@ -1,0 +1,21 @@
+{
+  "name": "logo-card2",
+  "description": "Webcomponent logo-card2 following open-wc recommendations",
+  "license": "MIT",
+  "author": "logo-card2",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "analyze": "cem analyze --litelement",
+    "start": "web-dev-server"
+  },
+  "dependencies": {
+    "@lrnwebcomponents/meme-maker": "^4.1.0",
+    "lit": "^2.0.2"
+  },
+  "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.4.17",
+    "@web/dev-server": "^0.1.34"
+  },
+  "customElements": "custom-elements.json"
+}
