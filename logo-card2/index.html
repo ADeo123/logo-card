@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<button class="deleteBtn">Delete Card</button>
+<button class="duplicateBtn"> Duplicate Card</button>
+<button class="changeColorBtn"> Background Color</button>
+<button class="ChangeHeadingBtn">Change Heading</button>
+
+  <style>
+    
+  </style>
+
+
+  <title>logo-card2</title>
+  
+</head>
+
+<body>
+  <logo-card2></logo-card2>
+
+  <script type="module" src="./src/logo-card2.js"></script>
+
+  <script>
+
+//Deletes the last duplicated card from the webpage
+document.querySelector(".deleteBtn").addEventListener("click", function (e) {
+let delCard = document.querySelector("logo-card2").remove();
+document.parentNode.removeChild(delCard);
+});
+
+//duplicates the card 
+document.querySelector(".duplicateBtn").addEventListener("click", function(e){
+  const card = document.querySelector("logo-card2").cloneNode();
+  document.body.appendChild(card);
+}); 
+
+//When the card is clicked the color changes
+document.querySelector("changeColorBtn").addEventListener("click", function (e) {
+const div = document.querySelector("logo-card2").shadowRoot.querySelector(".mainCard");
+let divColor = div.style.backgroundColor = "gray"; //changes the background to gray
+document.body.appendChild(divColor);
+});
+xs
+//When the heading/title is clicked it is changed to "something else"
+document.querySelector("ChangeHeadingBtn").addEventListener("click", function (e) {
+  document.querySelector("logo-card2").shadowRoot.querySelector("heading").innerText= "Something else"; //replaces the text of the heading
+});
+
+//JavaScript Hover implementation
+document.querySelector("div").addEventListener("mouseover", function (e) {
+const card = document.querySelector("logo-card2");
+let hoverEffect = div.style.borderColor ="white";
+document.body.appendChild(hoverEffect);
+});
+
+document.querySelector("div").addEventListener("mouseout", function (e) {
+const card = document.querySelector("logo-card2");
+let hoverEffect = div.style.borderColor ="black";
+document.body.appendChild(hoverEffect);
+});
+
+  </script>
+  
+</body>
+
+</html>
