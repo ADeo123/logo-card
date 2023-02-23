@@ -38,7 +38,7 @@ class LogoCard2 extends LitElement {
         color: white;
       }
       .image {
-        padding: 8px px 10px 10px;
+        padding: 10px 10px 10px 10px;
         width: 350px;
         border-color: black;
         border-width: 10px;
@@ -74,11 +74,11 @@ class LogoCard2 extends LitElement {
     return html`
       <div class="mainCard">
         <h1 class="heading">${this.title}</h1>
-        <meme-maker alt="Penn State Logo" image-url="https://images.onwardstate.com/uploads/2014/02/NittanyLionLogo.jpg" width="300" top-text="We Are" bottom-text="Penn State" class="image"></meme-maker>
-        <h2>Description</h2>
-        <p>The Penn State University logo showing the Nittany Lion. </p>
-        <button> <a href="https://hax.psu.edu"> Details
-        </a> </button> 
+          <meme-maker alt="Penn State Logo" image-url="https://images.onwardstate.com/uploads/2014/02/NittanyLionLogo.jpg" width="300" top-text="We Are" bottom-text="Penn State" class="image"></meme-maker>
+          <h2>Description</h2>
+          <details>
+            <summary>The Penn State University logo showing the Nittany Lion.</summary>
+          <slot> </slot>More Information</details>   
       </div>
     `;
   }
