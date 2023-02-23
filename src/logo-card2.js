@@ -79,7 +79,7 @@ class LogoCard2 extends LitElement {
           <h2>Description</h2>
           <details>
             <summary>The Penn State University logo showing the Nittany Lion.</summary>
-          <slot> </slot>More Penn State Information</details>   
+          <slot> </slot>Penn State Information</details>   
       </div>
     `;
   }
