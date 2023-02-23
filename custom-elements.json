@@ -20,12 +20,26 @@
               "default": "'My app'",
               "privacy": "public",
               "attribute": "header"
+            },
+            {
+              "kind": "field",
+              "name": "title",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Pennsylvania State University\"",
+              "privacy": "public",
+              "attribute": "title"
             }
           ],
           "attributes": [
             {
               "name": "header",
               "fieldName": "header"
+            },
+            {
+              "name": "title",
+              "fieldName": "title"
             }
           ],
           "superclass": {
