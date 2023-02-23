@@ -42,6 +42,7 @@ class LogoCard2 extends LitElement {
         width: 350px;
         border-color: black;
         border-width: 10px;
+        margin: 0px auto;
       }
       .heading{
         margin: 50px;
