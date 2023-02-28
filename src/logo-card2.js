@@ -21,13 +21,13 @@ class LogoCard2 extends LitElement {
         padding: 8px 8px 32px 32px;
         width: 500px;
         height: 650px;
-        background-color: navy;
+        background-color: white;
       }
       button {
         color: blue;
-        padding: px 8px 8px 8px 8px;
+        padding: 30px 30px 30px 30px;
         display: block;
-        margin: auto
+        margin: auto;
       }
       .btn:hover {
         background-color: blue; 
