@@ -20,8 +20,8 @@ class LogoCard2 extends LitElement {
         border: 2px solid rgb(0, 0, 0);
         padding: 8px 8px 32px 32px;
         width: 500px;
-        height: 500px;
-        background-color: navajowhite;
+        height: 650px;
+        background-color: navy;
       }
       button {
         color: blue;
@@ -78,8 +78,8 @@ class LogoCard2 extends LitElement {
           <meme-maker alt="Penn State Logo" image-url="https://images.onwardstate.com/uploads/2014/02/NittanyLionLogo.jpg" width="300" top-text="We Are" bottom-text="Penn State" class="image"></meme-maker>
           <h2>Description</h2>
           <details>
-            <summary>The Penn State University logo showing the Nittany Lion.</summary>
-          <slot> </slot>Penn State Information</details>   
+            <summary>More Information about Penn State University</summary>
+            <slot> </slot></details>   
       </div>
     `;
   }
