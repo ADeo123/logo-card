@@ -14,7 +14,6 @@ class LogoCard2 extends LitElement {
     :host {
 
     }
-
       .mainCard {
         text-align: center;
         border: 2px solid rgb(0, 0, 0);
