@@ -82,6 +82,9 @@ class LogoCard2 extends LitElement {
 
   `};
 
+ 
+
+
   constructor() {
     super();
     this.header = 'My app';
@@ -90,13 +93,37 @@ class LogoCard2 extends LitElement {
     this.opened = false;
   }
 
+  toggleEvent(e){
+    var state = this.shadowRoot.querySelector('details').getAttribute('open') === '' ? true : false;
+    this.opened = state;
+  }
+
+  updated(changedProperties){
+    changedProperties.forEach((oldValue, propName) => {
+      if(propName === 'opened'){
+        this.dispatchEvent(new CustomEvent('opened-changed',
+        {
+          composed: true,
+          bubbles: true,
+          cancelable: false,
+          detail: {
+            value: this[propName]
+          } 
+        }
+        ));
+        console.log(`${propName} changed. oldValue: ${oldValue}`);
+      }
+    });
+  }
+
+
   render() {
     return html`
       <div class="mainCard">
         <h1 class="heading">${this.title}</h1>
           <meme-maker alt="Penn State Logo" image-url="https://images.onwardstate.com/uploads/2014/02/NittanyLionLogo.jpg" width="300" top-text="We Are" bottom-text="Penn State" class="image"></meme-maker>
           <h2>Description</h2>
-          <details> 
+          <details .open="${this.opened}" @toggle="${this.toggleEvent}"> 
             <summary>More Information about Penn State University</summary>
             <slot> </slot></details>   
       </div>

@@ -14,7 +14,7 @@
       margin: 10;
       padding: 0;
       font-family: 'Courier New', Courier, monospace;
-      background-color: white;
+      background-color: aquamarine;
     }
 
     logo-card2[accent-color="blue"]{
@@ -50,6 +50,12 @@
 
   <script>
 
+//Custom event implementation
+document.body.addEventListener('opened-changed', (e) =>{
+  document.querySelector(".toggleDetails").innerText = e.detail.value ? 'Hide Details' : 'Show Details';
+  console.log('opened-changed',e.detail, e.target)
+});
+
 //Deletes the last duplicated card from the webpage
 document.querySelector(".deleteBtn").addEventListener("click", function (e) {
   let delCard = document.querySelector("logo-card2").remove();
@@ -64,9 +70,9 @@ document.querySelector(".duplicateBtn").addEventListener("click", function(e){
 
 //When the card is clicked the color changes
 document.querySelector(".changeColorBtn").addEventListener("click", function (e) {
-var colors = ["blue", "gray", "red", "white"];
-var randomColor = colors[Math.floor(Math.random()*colors.length)];
-document.querySelector("logo-card2").accentColor = randomColor;
+  var colors = ["blue", "gray", "red", "white"];
+  var randomColor = colors[Math.floor(Math.random()*colors.length)];
+  document.querySelector("logo-card2").accentColor = randomColor;
 
 //const div = document.querySelector("logo-card2").shadowRoot.querySelector(".mainCard");
 //let divColor = div.style.backgroundColor = "gray"; //changes the background to gray
@@ -79,11 +85,10 @@ document.querySelector(".ChangeHeadingBtn").addEventListener("click", function (
 });
 
 document.querySelector(".toggleDetails").addEventListener("click", function(e){
-  var details = document.querySelector("logo-card2").shadowRoot.querySelector("details");
-  details.toggleAttribute('open');
+  var details = document.querySelector("logo-card2");
+  details.opened = !details.opened;
 })
   
-
 
 </script>
   
