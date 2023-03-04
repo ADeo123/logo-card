@@ -30,6 +30,17 @@
               "default": "\"Pennsylvania State University\"",
               "privacy": "public",
               "attribute": "title"
+            },
+            {
+              "kind": "field",
+              "name": "accentColor",
+              "type": {
+                "text": "null"
+              },
+              "default": "null",
+              "privacy": "public",
+              "attribute": "accent-color",
+              "reflects": true
             }
           ],
           "attributes": [
@@ -40,6 +51,10 @@
             {
               "name": "title",
               "fieldName": "title"
+            },
+            {
+              "name": "accent-color",
+              "fieldName": "accentColor"
             }
           ],
           "superclass": {

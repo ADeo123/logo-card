@@ -6,8 +6,33 @@
 <button class="duplicateBtn"> Duplicate Card</button>
 <button class="changeColorBtn"> Background Color</button>
 <button class="ChangeHeadingBtn">Change Heading</button>
+<button class="toggleDetails">Toggle Details</button>
 
   <style>
+    html,
+    body {
+      margin: 10;
+      padding: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background-color: white;
+    }
+
+    logo-card2[accent-color="blue"]{
+      --logo-card-accent-color: blue;
+    }
+
+    logo-card2[accent-color="gray"]{
+      --logo-card-accent-color: gray;
+    }
+
+    logo-card2[accent-color="red"]{
+      --logo-card-accent-color: red;
+    }
+
+    logo-card2[accent-color="white"]{
+      --logo-card-accent-color: white;
+    }
+
   </style>
 
   <title>logo-card2</title>
@@ -27,21 +52,25 @@
 
 //Deletes the last duplicated card from the webpage
 document.querySelector(".deleteBtn").addEventListener("click", function (e) {
-let delCard = document.querySelector("logo-card2").remove();
-document.parentNode.removeChild(delCard);
+  let delCard = document.querySelector("logo-card2").remove();
+  document.parentNode.removeChild(delCard);
 });
 
 //duplicates the card 
 document.querySelector(".duplicateBtn").addEventListener("click", function(e){
-  const card = document.querySelector("logo-card2").cloneNode();
+  var card = document.querySelector("logo-card2").cloneNode(true);
   document.body.appendChild(card);
 }); 
 
 //When the card is clicked the color changes
 document.querySelector(".changeColorBtn").addEventListener("click", function (e) {
-const div = document.querySelector("logo-card2").shadowRoot.querySelector(".mainCard");
-let divColor = div.style.backgroundColor = "gray"; //changes the background to gray
-document.body.appendChild(divColor);
+var colors = ["blue", "gray", "red", "white"];
+var randomColor = colors[Math.floor(Math.random()*colors.length)];
+document.querySelector("logo-card2").accentColor = randomColor;
+
+//const div = document.querySelector("logo-card2").shadowRoot.querySelector(".mainCard");
+//let divColor = div.style.backgroundColor = "gray"; //changes the background to gray
+//document.body.appendChild(divColor);
 });
 
 //When the heading/title is clicked it is changed to "something else"
@@ -49,18 +78,12 @@ document.querySelector(".ChangeHeadingBtn").addEventListener("click", function (
   document.querySelector("logo-card2").title="Something else";
 });
 
-//JavaScript Hover implementation
-document.querySelector(".mainCard").addEventListener("mouseover", function (e) {
-const card = document.querySelector("logo-card2");
-let hoverEffect = div.style.borderColor="white";
-document.body.appendChild(hoverEffect);
-});
+document.querySelector(".toggleDetails").addEventListener("click", function(e){
+  var details = document.querySelector("logo-card2").shadowRoot.querySelector("details");
+  details.toggleAttribute('open');
+})
+  
 
-document.querySelector(".mainCard").addEventListener("mouseout", function (e) {
-const card = document.querySelector("logo-card2");
-let hoverEffect = div.style.borderColor="black";
-document.body.appendChild(hoverEffect);
-});
 
 </script>
   
