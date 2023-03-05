@@ -1,8 +1,6 @@
 import { LitElement, html, css } from 'lit';
 import "@lrnwebcomponents/meme-maker/meme-maker.js";
 
-const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
-
 class LogoCard2 extends LitElement {
   static properties = {
     header: { type: String },
@@ -13,15 +11,9 @@ class LogoCard2 extends LitElement {
     reflect: true,
     attribute: 'accent-color'},
     opened: {type: Boolean, reflect: true},
-    memeImage:{
-      type: String
-    },
-    memeTopText: {
-      type: String
-    },
-    memeBottomText:{
-      type: String
-    },
+    memeImage:{type: String},
+    memeTopText: {type: String},
+    memeBottomText:{type: String},
   }
 
   static get styles(){
@@ -43,36 +35,21 @@ class LogoCard2 extends LitElement {
       color: black; 
     }
 
-
       .mainCard {
         text-align: center;
         border: 5px solid navy;
-        padding: 32px 32px 32px 32px;
+        padding: 10px 10px 10px 10px;
         width: 500px;
         height: 650px;
         background-color: white;
         display: flex;
         float: left;
         display: block;
-      }
-      button {
-        color: blue;
-        padding: 30px 30px 30px 30px;
-        display: block;
-        margin: auto;
-      }
-      .btn:hover {
-        background-color: blue; 
-        color: white;
-      }
-      .btn:focus {
-        background-color: blue; 
-        color: white;
+        box-shadow: 0px 0px 5px black;
       }
       .image {
         padding: 10px 10px 10px 10px;
-        width: 350px;
-        border-color: black;
+        width: 450px;
         margin: 0px auto;
       }
       .heading{
@@ -130,8 +107,7 @@ class LogoCard2 extends LitElement {
       }
     });
   }
-
-
+  
   render() {
     return html`
       <div class="mainCard">
