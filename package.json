@@ -4,7 +4,8 @@
   "license": "MIT",
   "author": "team-card",
   "version": "0.0.4",
-  "type": "module",  "scripts": {
+  "type": "module",  
+    "scripts": {
     "test": "web-test-runner --coverage",
     "test:watch": "web-test-runner --watch",
     "storybook": "npm run analyze -- --exclude dist && web-dev-server -c .storybook/server.mjs",
