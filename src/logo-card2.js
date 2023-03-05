@@ -42,13 +42,18 @@ class LogoCard2 extends LitElement {
       background-color: var(--logo-card-accent-color, white);
       color: black; 
     }
+
+
       .mainCard {
         text-align: center;
-        border: 2px solid rgb(0, 0, 0);
-        padding: 8px 8px 32px 32px;
+        border: 5px solid navy;
+        padding: 32px 32px 32px 32px;
         width: 500px;
         height: 650px;
         background-color: white;
+        display: flex;
+        float: left;
+        display: block;
       }
       button {
         color: blue;
@@ -68,7 +73,6 @@ class LogoCard2 extends LitElement {
         padding: 10px 10px 10px 10px;
         width: 350px;
         border-color: black;
-        border-width: 10px;
         margin: 0px auto;
       }
       .heading{
