@@ -3,7 +3,6 @@ import "@lrnwebcomponents/meme-maker/meme-maker.js";
 
 class LogoCard2 extends LitElement {
   static properties = {
-    header: { type: String },
     title: {type: String},
     subTitle: {type: String},
     accentColor: {
@@ -75,7 +74,6 @@ class LogoCard2 extends LitElement {
  
   constructor() {
     super();
-    this.header = 'My app';
     this.title = "Pennsylvania State University"
     this.subTitle = "Description"
     this.memeImage = "https://images.onwardstate.com/uploads/2014/02/NittanyLionLogo.jpg"
