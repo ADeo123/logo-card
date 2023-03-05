@@ -14,7 +14,7 @@
       margin: 10;
       padding: 0;
       font-family: 'Courier New', Courier, monospace;
-      background-color: aquamarine;
+      background-color: white;
     }
 
     logo-card2[accent-color="blue"]{
@@ -59,7 +59,6 @@ document.body.addEventListener('opened-changed', (e) =>{
 //Deletes the last duplicated card from the webpage
 document.querySelector(".deleteBtn").addEventListener("click", function (e) {
   let delCard = document.querySelector("logo-card2").remove();
-  document.parentNode.removeChild(delCard);
 });
 
 //duplicates the card 
@@ -73,17 +72,15 @@ document.querySelector(".changeColorBtn").addEventListener("click", function (e)
   var colors = ["blue", "gray", "red", "white"];
   var randomColor = colors[Math.floor(Math.random()*colors.length)];
   document.querySelector("logo-card2").accentColor = randomColor;
-
-//const div = document.querySelector("logo-card2").shadowRoot.querySelector(".mainCard");
-//let divColor = div.style.backgroundColor = "gray"; //changes the background to gray
-//document.body.appendChild(divColor);
 });
 
 //When the heading/title is clicked it is changed to "something else"
 document.querySelector(".ChangeHeadingBtn").addEventListener("click", function (e) {
-  document.querySelector("logo-card2").title="Something else";
+  var heading = prompt("Please Input A New Heading");
+  document.querySelector("logo-card2").title = heading;
 });
 
+//Toggles the details drop-down
 document.querySelector(".toggleDetails").addEventListener("click", function(e){
   var details = document.querySelector("logo-card2");
   details.opened = !details.opened;

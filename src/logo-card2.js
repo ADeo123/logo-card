@@ -7,11 +7,21 @@ class LogoCard2 extends LitElement {
   static properties = {
     header: { type: String },
     title: {type: String},
+    subTitle: {type: String},
     accentColor: {
     type: String,
     reflect: true,
     attribute: 'accent-color'},
     opened: {type: Boolean, reflect: true},
+    memeImage:{
+      type: String
+    },
+    memeTopText: {
+      type: String
+    },
+    memeBottomText:{
+      type: String
+    },
   }
 
   static get styles(){
@@ -79,16 +89,17 @@ class LogoCard2 extends LitElement {
           image-resolution: auto;
         }
       }
-
   `};
 
  
-
-
   constructor() {
     super();
     this.header = 'My app';
     this.title = "Pennsylvania State University"
+    this.subTitle = "Description"
+    this.memeImage = "https://images.onwardstate.com/uploads/2014/02/NittanyLionLogo.jpg"
+    this.memeTopText = "We Are"
+    this.memeBottomText = "Penn State"
     this.accentColor = null;
     this.opened = false;
   }
@@ -121,9 +132,9 @@ class LogoCard2 extends LitElement {
     return html`
       <div class="mainCard">
         <h1 class="heading">${this.title}</h1>
-          <meme-maker alt="Penn State Logo" image-url="https://images.onwardstate.com/uploads/2014/02/NittanyLionLogo.jpg" width="300" top-text="We Are" bottom-text="Penn State" class="image"></meme-maker>
-          <h2>Description</h2>
-          <details .open="${this.opened}" @toggle="${this.toggleEvent}"> 
+          <meme-maker alt="Penn State Logo" image-url=${this.memeImage} width="300" top-text=${this.memeTopText} bottom-text=${this.memeBottomText} class="image"></meme-maker>
+          <h2 class="subHeading">${this.subTitle}</h2>
+          <details .open="${this.opened}" @toggle="${this.toggleEvent}" @click="${this.clickEvent}"> 
             <summary>More Information about Penn State University</summary>
             <slot> </slot></details>   
       </div>

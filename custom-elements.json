@@ -12,6 +12,15 @@
           "name": "LogoCard2",
           "members": [
             {
+              "kind": "method",
+              "name": "toggleEvent",
+              "parameters": [
+                {
+                  "name": "e"
+                }
+              ]
+            },
+            {
               "kind": "field",
               "name": "header",
               "type": {
@@ -41,6 +50,25 @@
               "privacy": "public",
               "attribute": "accent-color",
               "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "opened",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "privacy": "public",
+              "attribute": "opened",
+              "reflects": true
+            }
+          ],
+          "events": [
+            {
+              "name": "opened-changed",
+              "type": {
+                "text": "CustomEvent"
+              }
             }
           ],
           "attributes": [
@@ -55,6 +83,10 @@
             {
               "name": "accent-color",
               "fieldName": "accentColor"
+            },
+            {
+              "name": "opened",
+              "fieldName": "opened"
             }
           ],
           "superclass": {
