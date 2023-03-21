@@ -19,15 +19,17 @@ export class cardList extends LitElement {
     }
 
     //AD
-    async updateList(){
-        const address = new URL("../api/list.js", import.meta.url).href;
-        const response = await fetch(address);
-        if (response.ok) {
-            const data = await response.json();
-            this.cards = data;
-        } else {
-            console.error(`Failed to fetch card list: ${response.statusText}`);
-        }
+    updateList(){
+        const address = new URL('../api/list',import.meta.url).href;
+        const data = fetch(address).then((response) => {
+            if(response.ok){
+                return response.json()
+            }
+            return[];
+        })
+        .then((data) =>{
+            this.players = data;
+        });
     }
 
 
