@@ -4,6 +4,108 @@
   "modules": [
     {
       "kind": "javascript-module",
+      "path": "api/list.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "handler",
+          "parameters": [
+            {
+              "name": "request"
+            },
+            {
+              "name": "res"
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "handler",
+            "module": "api/list.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/card-list.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "cardList",
+          "members": [
+            {
+              "kind": "field",
+              "name": "tag",
+              "static": true
+            },
+            {
+              "kind": "method",
+              "name": "updateList"
+            },
+            {
+              "kind": "field",
+              "name": "cards",
+              "type": {
+                "text": "array"
+              },
+              "default": "[]",
+              "privacy": "public",
+              "attribute": "cards"
+            },
+            {
+              "kind": "field",
+              "name": "cardList",
+              "type": {
+                "text": "string"
+              },
+              "default": "'Penn State Card List'",
+              "privacy": "public",
+              "attribute": "cardList"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "cards",
+              "fieldName": "cards"
+            },
+            {
+              "name": "cardList",
+              "fieldName": "cardList"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "cardList",
+          "declaration": {
+            "name": "cardList",
+            "module": "src/card-list.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "declaration": {
+            "name": "cardList",
+            "module": "src/card-list.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/logo-card2.js",
       "declarations": [
         {
@@ -22,16 +124,6 @@
             },
             {
               "kind": "field",
-              "name": "header",
-              "type": {
-                "text": "string"
-              },
-              "default": "'My app'",
-              "privacy": "public",
-              "attribute": "header"
-            },
-            {
-              "kind": "field",
               "name": "title",
               "type": {
                 "text": "string"
@@ -39,6 +131,46 @@
               "default": "\"Pennsylvania State University\"",
               "privacy": "public",
               "attribute": "title"
+            },
+            {
+              "kind": "field",
+              "name": "subTitle",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Description\"",
+              "privacy": "public",
+              "attribute": "subTitle"
+            },
+            {
+              "kind": "field",
+              "name": "memeImage",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"https://images.onwardstate.com/uploads/2014/02/NittanyLionLogo.jpg\"",
+              "privacy": "public",
+              "attribute": "memeImage"
+            },
+            {
+              "kind": "field",
+              "name": "memeTopText",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"We Are\"",
+              "privacy": "public",
+              "attribute": "memeTopText"
+            },
+            {
+              "kind": "field",
+              "name": "memeBottomText",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"Penn State\"",
+              "privacy": "public",
+              "attribute": "memeBottomText"
             },
             {
               "kind": "field",
@@ -73,12 +205,12 @@
           ],
           "attributes": [
             {
-              "name": "header",
-              "fieldName": "header"
-            },
-            {
               "name": "title",
               "fieldName": "title"
+            },
+            {
+              "name": "subTitle",
+              "fieldName": "subTitle"
             },
             {
               "name": "accent-color",
@@ -87,6 +219,18 @@
             {
               "name": "opened",
               "fieldName": "opened"
+            },
+            {
+              "name": "memeImage",
+              "fieldName": "memeImage"
+            },
+            {
+              "name": "memeTopText",
+              "fieldName": "memeTopText"
+            },
+            {
+              "name": "memeBottomText",
+              "fieldName": "memeBottomText"
             }
           ],
           "superclass": {

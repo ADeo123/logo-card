@@ -20,7 +20,7 @@ export class cardList extends LitElement {
 
     //AD
     async updateList(){
-        const address = new URL("../api/list", import.meta.url).href;
+        const address = new URL("../api/list.js", import.meta.url).href;
         const response = await fetch(address);
         if (response.ok) {
             const data = await response.json();
