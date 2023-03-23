@@ -20,7 +20,8 @@ export class cardList extends LitElement {
 
     //AD
     updateList(){
-        const address = new URL('../api/list',import.meta.url).href;
+        console.log("test");
+        const address = new URL('../assets/list.json',import.meta.url).href;
         const data = fetch(address).then((response) => {
             if(response.ok){
                 return response.json()
@@ -28,7 +29,7 @@ export class cardList extends LitElement {
             return[];
         })
         .then((data) =>{
-            this.players = data;
+            this.cards = data;
         });
     }
 
